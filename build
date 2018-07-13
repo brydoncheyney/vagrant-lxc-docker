@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -oux pipefail
+
+mkdir /root/src
+cd /root/src/
+git clone git://github.com/fgrehm/vagrant-lxc.git
+cd vagrant-lxc
+cp /src/Gemfile .
+bundle install
+bundle exec rake && bundle exec rake build
+
+mkdir -p /src/builds/
+cp pkg/vagrant-lxc-*.gem /src/builds/
