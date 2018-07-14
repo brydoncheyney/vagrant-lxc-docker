@@ -4,9 +4,8 @@ set -oux pipefail
 
 mkdir /root/src
 cd /root/src/
-git clone git://github.com/fgrehm/vagrant-lxc.git
+git clone git://github.com/brydoncheyney/vagrant-lxc.git
 cd vagrant-lxc
-cp /src/Gemfile .
 bundle install
 bundle exec rake && bundle exec rake build
 
